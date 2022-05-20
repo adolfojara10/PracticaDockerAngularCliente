@@ -12,12 +12,13 @@ export class PersonawsService {
   constructor(private http: HttpClient) { }
 
   getPersonas(): Observable<any[]>{
-    let url = environment.WS_PATH +'/persona/listar';
+    let url = environment.WS_PATH +'/persona/listaPersonas';
     return this.http.get<any>(url);
   }
 
   crearPersona(persona: personaS){
-    let url = environment.WS_PATH;
+    let url = environment.WS_PATH + '/persona/crear?id=' + persona.id + '&cedula=' + persona.cedula
+      + '&nombre=' + persona.nombre + '&apellido=' + persona.apellido + '&email=' + persona.email;
     return this.http.post<any>(url, persona);
   }
 }
