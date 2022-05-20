@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CrearPersonaComponent } from './pages/crear-persona/crear-persona.component';
 import { ListarPersonaComponent } from './pages/listar-persona/listar-persona.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { ListarPersonaComponent } from './pages/listar-persona/listar-persona.co
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
