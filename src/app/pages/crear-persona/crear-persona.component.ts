@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
 import { personaS } from 'src/app/domain/persona';
+import { PersonawsService } from 'src/app/services/personaws.service';
 
 @Component({
   selector: 'app-crear-persona',
@@ -11,7 +12,7 @@ export class CrearPersonaComponent implements OnInit {
 
   persona: personaS = new personaS();
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private personaServ: PersonawsService) { }
 
   ngOnInit(): void {
   }
@@ -21,7 +22,9 @@ export class CrearPersonaComponent implements OnInit {
   }
 
   crearPersona(){
-    
+    this.personaServ.crearPersona(this.persona).subscribe(data => {
+      console.log(data);
+    });
   }
 
 }

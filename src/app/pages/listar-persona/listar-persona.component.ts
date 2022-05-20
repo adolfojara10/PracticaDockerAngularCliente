@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import {OrderListModule} from 'primeng/orderlist';
+import { PersonawsService } from 'src/app/services/personaws.service';
+
+
 
 @Component({
   selector: 'app-listar-persona',
@@ -12,14 +14,15 @@ export class ListarPersonaComponent implements OnInit {
   
   listaPersonas: any;
 
-  constructor(private router: Router, private orderLM: OrderListModule) { }
+
+  constructor(private router: Router, private personaServ:PersonawsService) { }
 
   ngOnInit(): void {
     this.cargarPersonas();
   }
 
   cargarPersonas(){
-    
+    this.listaPersonas = this.personaServ.getPersonas();
   }
 
   crearPersona(){
