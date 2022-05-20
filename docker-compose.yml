@@ -1,0 +1,7 @@
+version: '3.3'
+services:
+  angular-docker:
+    container_name: angular-docker-container
+    build: ./PracticaDockerCliente
+    ports:
+      - '9000:80'

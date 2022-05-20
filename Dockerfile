@@ -1,10 +1,8 @@
-FROM nginx:alpine AS my-app-build
+FROM node:latest as node 
 WORKDIR /app
 COPY . .
-RUN npm ci && npm run build
-
-# stage 2
+RUN npm install
+RUN npm run build --prod
 
 FROM nginx:alpine
-COPY --from=my-app-build /app/dist/practica-docker-cliente /usr/share/nginx/html
-EXPOSE 80
+COPY --from=node /app/dist/practica-docker-angular /usr/share/nginx/html
