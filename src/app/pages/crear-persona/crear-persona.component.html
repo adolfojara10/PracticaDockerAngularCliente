@@ -1,0 +1,144 @@
+<style>
+    #tablabr{
+        background-color: cornflowerblue;
+        color: cornflowerblue;
+        width: 1845px;
+        height: 75px;
+        
+    }
+
+    #nn{
+        background-color: cyan;
+        background-size: 100%;
+    }
+    
+    #label{
+        font-size: 15px;
+        color: black;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        padding: 20px;
+    }
+    
+    #labelT{
+        font-size: 35px;
+        color: black;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        padding: 20px;
+    }
+    
+    .custom-input-file {
+  background-color: #1d3f9e;
+  color: #fff;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0 auto 0;
+  min-height: 15px;
+  overflow: hidden;
+  padding: 10px;
+  position: relative;
+  text-align: center;
+  width: 400px;
+}
+
+.custom-input-file .input-file {
+ border: 10000px solid transparent;
+ cursor: pointer;
+ font-size: 10000px;
+ margin: 0;
+ opacity: 0;
+ outline: 0 none;
+ padding: 0;
+ position: absolute;
+ right: -1000px;
+ top: -1000px;
+}
+    
+    #h1{
+        font-size: 25px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+</style>
+
+<head>
+    <title>Crear Personas</title>
+</head>
+<body id="nn">
+<table id="tablabr">
+    <tr>
+        <td>
+            <button pButton type="button" class="p-button-raised p-button-rounded" id="botonr" (click)="cambiarPagina()">Listar Personas</button>
+        </td>
+    </tr>
+</table>
+
+<table border="0">
+            
+    <br/>
+    <tr>
+        <td>
+            <label id="label" for="inf">
+                Nombre
+            </label> 
+        </td>
+        <td>
+            <span class="p-float-label">
+                <input id="float-input-titulo" type="text" pInputText [(ngModel)]="persona.nombre"> 
+                
+            </span>
+            <br/>
+        </td>
+        
+    </tr>
+    <tr>
+        <td>
+            <label id="label" for="inf">
+                Apellido
+            </label> 
+        </td>
+        <td>
+            <span class="p-float-label">
+                <input id="float-input-autor" type="text" pInputText [(ngModel)]="persona.apellido"> 
+                
+            </span>
+        </td>
+    </tr>
+    <br/>
+    <tr>
+        <td>
+            <label id="label" for="inf">
+                Cédula
+            </label> 
+        </td>
+        <td>
+            <span class="p-float-label">
+                <input id="float-input-fecha" type="text" pInputText [(ngModel)]="persona.cedula"> 
+                
+            </span>
+        </td>
+    </tr>
+    <br/>
+    <tr>
+           
+        <td>
+            <label id="label" for="cargar">Email</label>                                
+        </td>
+        <td>
+        
+            <span class="p-float-label">
+                <input id="float-input-fecha" type="text" pInputText [(ngModel)]="persona.email"> 
+                
+            </span>
+        <!--
+            <textarea rows="5" cols="30" pInputTextarea autoResize="autoResize"></textarea>
+            -->
+        </td>
+    </tr>    
+    <tr>
+        <td colspan="2" align="center">
+            <br/>
+            <button pButton type="button" class="p-button-raised p-button-rounded" (click)="crearPersona()">Guardar</button>
+        </td>
+    </tr>
+</table> 
+</body>

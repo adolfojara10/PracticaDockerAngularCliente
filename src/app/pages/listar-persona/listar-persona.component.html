@@ -1,0 +1,10 @@
+<h2>Listado de contactos Activos</h2>
+    <ul>
+
+        <!--es un bucle-->
+        <li *ngFor="let persona of listaPersonas | async"> 
+            {{persona.cedula}} - {{persona.nombre}} - {{persona.apellido}} 
+        </li>
+
+
+    </ul>
