@@ -22,9 +22,9 @@ export class CrearPersonaComponent implements OnInit {
   }
 
   crearPersona(){
+    this.persona.id = 1;
     this.personaServ.crearPersona(this.persona).subscribe(data => {
       console.log(data);
     });
   }
-
 }
