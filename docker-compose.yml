@@ -1,7 +1,7 @@
-version: '3.3'
+version: "3.7"
 services:
-  angular-docker:
-    container_name: angular-docker-container
-    build: ./practica-docker-cliente
-    ports:
-      - '9000:80'
+    angular-service:
+       container_name: ng-docker-example
+       build: .
+       ports:
+           - "4200:80"
