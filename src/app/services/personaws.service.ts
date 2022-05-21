@@ -17,7 +17,7 @@ export class PersonawsService {
   }
 
   crearPersona(persona: personaS){
-    let url = environment.WS_PATH + '/persona/crear?id=' + persona.id + '&cedula=' + persona.cedula
+    let url = environment.WS_PATH + '/persona/crear?cedula=' + persona.cedula
       + '&nombre=' + persona.nombre + '&apellido=' + persona.apellido + '&email=' + persona.email;
     return this.http.post<any>(url, persona);
   }

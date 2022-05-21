@@ -24,14 +24,12 @@ export class CrearPersonaComponent implements OnInit {
   }
 
   crearPersona(){
-    this.persona.id = this.generarID();
+    
     this.personaServ.crearPersona(this.persona).subscribe(data => {
       console.log(data);
     });
     this.listaObras = this.personaServ.getPersonas();
   }
 
-  generarID(){
-    return this.listaObras.length + 1;
-  }
+  
 }
