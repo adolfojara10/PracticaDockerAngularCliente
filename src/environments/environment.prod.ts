@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  WS_PATH: "http://localhost:8080/practicaDockerSD/webProy"
+  WS_PATH: "http://localhost:8080/practicaDockerJava/webProy"
 };
