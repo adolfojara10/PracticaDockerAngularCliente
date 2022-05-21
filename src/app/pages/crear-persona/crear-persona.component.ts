@@ -28,6 +28,7 @@ export class CrearPersonaComponent implements OnInit {
     this.personaServ.crearPersona(this.persona).subscribe(data => {
       console.log(data);
     });
+    this.listaObras = this.personaServ.getPersonas();
   }
 
   generarID(){
