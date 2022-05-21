@@ -11,10 +11,12 @@ import { PersonawsService } from 'src/app/services/personaws.service';
 export class CrearPersonaComponent implements OnInit {
 
   persona: personaS = new personaS();
+  listaObras:any;
 
   constructor(private router: Router, private personaServ: PersonawsService) { }
 
   ngOnInit(): void {
+    this.listaObras = this.personaServ.getPersonas();
   }
 
   cambiarPagina(){
@@ -22,9 +24,13 @@ export class CrearPersonaComponent implements OnInit {
   }
 
   crearPersona(){
-    this.persona.id = 1;
+    this.persona.id = this.generarID();
     this.personaServ.crearPersona(this.persona).subscribe(data => {
       console.log(data);
     });
+  }
+
+  generarID(){
+    return this.listaObras.length + 1;
   }
 }
